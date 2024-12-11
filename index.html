@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Haidar</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap JS (Opsional, untuk fitur dropdown atau collapse) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Tambahkan Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- cdn fontawesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+
+</head>
+<style>
+    /* Tambahkan padding untuk membuat link lebih besar */
+    .nav-link {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    /* Efek hover */
+    .nav-link:hover {
+        color: #007bff;
+        transform: scale(1.1);
+    }
+
+    /* Brand yang lebih besar */
+    .navbar-brand {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+    }
+
+    /* Gaya Heading */
+    h1 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+    }
+
+    /* Paragraf */
+    p {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    /* Gaya Foto */
+    img {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    img:hover {
+        transform: scale(1.05);
+    }
+
+    /* Button */
+    /* From Uiverse.io by satyamchaudharydev */
+    .button {
+        position: relative;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        padding-block: 0.5rem;
+        padding-inline: 1.25rem;
+        background-color: rgb(0 107 179);
+        border-radius: 9999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffff;
+        gap: 10px;
+        font-weight: bold;
+        border: 3px solid #ffffff4d;
+        outline: none;
+        overflow: hidden;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    .icon {
+        width: 24px;
+        height: 24px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .button:hover {
+        transform: scale(1.05);
+        border-color: #fff9;
+    }
+
+    .button:hover .icon {
+        transform: translate(4px);
+    }
+
+    .button:hover::before {
+        animation: shine 1.5s ease-out infinite;
+    }
+
+    .button::before {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 100%;
+        background-image: linear-gradient(120deg,
+                rgba(255, 255, 255, 0) 30%,
+                rgba(255, 255, 255, 0.8),
+                rgba(255, 255, 255, 0) 70%);
+        top: 0;
+        left: -100px;
+        opacity: 0.6;
+    }
+
+    @keyframes shine {
+        0% {
+            left: -100px;
+        }
+
+        60% {
+            left: 100%;
+        }
+
+        to {
+            left: 100%;
+        }
+    }
+
+    /* Menyetel ukuran seragam untuk container gambar */
+    .card-img-container {
+        width: 100%;
+        height: 200px;
+        /* Tinggi tetap */
+        overflow: hidden;
+        /* Memastikan gambar tidak melampaui batas */
+    }
+
+    .card-img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Proporsi tetap pada gambar */
+    }
+
+    /* Ukuran seragam untuk kartu */
+    .card {
+        height: 400px;
+        /* Tinggi seragam untuk kartu */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* Agar elemen diatur dengan rapi */
+    }
+
+    /* Menyetel teks di bagian body */
+    .card-body {
+        text-align: center;
+    }
+
+    .img-certi {
+        width: 100%;
+        height: 300px;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#">Portofolio</a>
+
+            <!-- Toggle Button for Mobile View -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#tentang">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Proyek</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#certificates">Sertifikat</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home -->
+    <div class="container my-5" id="tentang">
+        <div class="row align-items-center">
+            <!-- Kolom Kiri: Kata-kata -->
+            <div class="col-md-6">
+                <h1 class="mb-4 text-primary">Selamat Datang di Portofolio Saya</h1>
+                <p class="lead">
+                    Hai! Perkenalkan nama saya Muhammad Haidar, saya adalah seorang murid di SMK Wikrama Bogor. Saya
+                    adalah seorang pelajar dengan fokus pada pembelajaran dan pengembangan skill. Saya memiliki minat
+                    yang kuat dalam bidang pemrograman dan ingin mencoba memperluas pengetahuan dan kemampuan dalam
+                    bidang ini.
+                </p>
+                <button class="button">
+                    Tentang saya
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+                <div class="d-flex gap-4">
+                    <!-- GitHub -->
+                    <a href="https://github.com/MuhammadHaidar1138" target="_blank" class="text-dark"
+                        style="font-size: 2rem;">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/muhammad-haidar-7102ba341/" target="_blank" class="text-primary"
+                        style="font-size: 2rem;">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Kolom Kanan: Foto -->
+            <div class="col-md-6 text-center">
+                <img src="asset/Profile no Background.png" alt="Foto Profil" class="img-fluid shadow-lg"
+                    style="max-width: 400px; border-radius: 20% 0% 20% 0%; border: 3px solid #007bff;">
+            </div>
+
+        </div>
+    </div>
+    <!-- End Home -->
+
+    <!-- Project -->
+    <div class="container my-5" id="projects">
+        <div class="text-center mb-4">
+            <h2 class="text-primary">Proyek Saya</h2>
+            <p class="text-muted">Berikut adalah beberapa proyek yang telah saya kerjakan.</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Card Proyek -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card shadow-sm">
+                    <div class="card-img-container">
+                        <img src="asset/Webshop.png" class="card-img-top" alt="Proyek 1">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Webshop</h5>
+                        <p class="card-text">Membuat Webshop sederhana menggunakan HTML dan CSS</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card lainnya (proyek 2-6) -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card shadow-sm">
+                    <div class="card-img-container">
+                        <img src="asset/Bahan Bakar.png" class="card-img-top" alt="Proyek 2">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Bahan Bakar</h5>
+                        <p class="card-text">Membuat Penghitungan mengenai pembelian bahan bakar menggunakan PHP</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Proyek 3 -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card shadow-sm">
+                    <img src="asset/Data Siswa.png" class="card-img-top" alt="Proyek 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Siswa</h5>
+                        <p class="card-text">Membuat CRUD sederhana menggunakan PHP</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Proyek 4 -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card shadow-sm">
+                    <img src="asset/Kalkulator sederhana.png" class="card-img-top" alt="Proyek 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Kalkulator</h5>
+                        <p class="card-text">Membuat kalkulator sederhana menggunakan PHP</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Proyek 5 -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card shadow-sm">
+                    <img src="asset/Kasir.png" class="card-img-top" alt="Proyek 5">
+                    <div class="card-body">
+                        <h5 class="card-title">Kasir</h5>
+                        <p class="card-text">Membuat Sistem kasir sederhana menggunakan PHP</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Proyek 6 -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card shadow-sm">
+                    <img src="asset/Rental Motor.png" class="card-img-top" alt="Proyek 6">
+                    <div class="card-body">
+                        <h5 class="card-title">Rental Motor</h5>
+                        <p class="card-text">Membuat perhitungan mengenai Rental Motormenggunakan PHP</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Project -->
+
+    <!-- Sertifikat -->
+    <div class="container my-5" id="certificates">
+        <div class="text-center mb-4">
+            <h2 class="text-primary">Sertifikat Saya</h2>
+            <p class="text-muted">Berikut adalah beberapa sertifikat yang telah saya peroleh.</p>
+        </div>
+    
+        <div class="row g-4">
+            <!-- Card Sertifikat 1 -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card shadow-sm">
+                    <div class="card-img-container img-certi">
+                        <img src="asset/Dicoding.png" class="card-img-top" alt="Sertifikat 1">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Sertifikat 1</h5>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Card Sertifikat 2 -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card shadow-sm">
+                    <div class="card-img-container img-certi">
+                        <img src="asset/Dicoding.png" class="card-img-top" alt="Sertifikat 2">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Sertifikat 2</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Sertifikat -->    
+</body>
+
+</html>
